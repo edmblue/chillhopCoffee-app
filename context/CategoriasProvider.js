@@ -68,7 +68,7 @@ const CategoriasProvider = ({ children }) => {
   };
 
   const getCategorias = async () => {
-    const url = 'http://localhost:3000/api/categorias';
+    const url = '/api/categorias';
     try {
       const response = await axios.get(url);
 
