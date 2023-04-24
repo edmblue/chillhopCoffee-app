@@ -27,7 +27,7 @@ const AdminLayout = ({ children, title = '', description = '' }) => {
   return (
     <>
       <Head>
-        <title>Chillhop Coffee | {title} </title>
+        <title>{`Chillhop Coffee | ${title}`}</title>
         <meta name="description" content={description} />
       </Head>
       <div className="md:flex">

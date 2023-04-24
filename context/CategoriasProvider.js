@@ -11,6 +11,7 @@ const CategoriasProvider = ({ children }) => {
   const [productoSelected, setProductoSelected] = useState({});
   const [modal, setModal] = useState(false);
   const [pedidosList, setPedidosList] = useState([]);
+  const [isActive, setIsActive] = useState(false);
 
   const [nombre, setNombre] = useState('');
 
@@ -23,6 +24,7 @@ const CategoriasProvider = ({ children }) => {
   const handleCategoriaSelected = (cat) => {
     setCategoriaSelected(cat);
     router.push('/');
+    setIsActive(false);
   };
 
   const handleProductoSelected = (prod) => {
@@ -68,7 +70,7 @@ const CategoriasProvider = ({ children }) => {
   };
 
   const getCategorias = async () => {
-    const url = 'http://localhost:3000/api/categorias';
+    const url = '/api/categorias';
     try {
       const response = await axios.get(url);
 
@@ -102,7 +104,8 @@ const CategoriasProvider = ({ children }) => {
         pedidosList,
         setPedidosList,
         eliminarProducto,
-
+        isActive,
+        setIsActive,
         nombre,
         setNombre,
       }}

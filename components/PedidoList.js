@@ -80,7 +80,7 @@ const PedidoList = ({ ordenes }) => {
           </div>
           <div>
             <p className="font-bold text-lg md:text-xl mt-5">
-              Estado:
+              Estado:{' '}
               <span
                 className={`fontnbold text-xl md:text-2xl ${
                   orden.estado ? 'text-green-500' : 'text-red-500'

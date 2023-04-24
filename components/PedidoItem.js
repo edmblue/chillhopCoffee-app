@@ -14,7 +14,7 @@ const PedidoItem = ({ pedido }) => {
   };
 
   return (
-    <div className="mx-auto mt-2 flex gap-3 bg-white py-3 rounded px-4 shadow-2xl">
+    <div className="mx-auto mt-2 flex gap-3 bg-white py-3 rounded px-4 shadow-2xl items-center justify-center">
       <div className="w-1/3 flex items-center">
         <Image
           src={`/img/${imagen}.jpg`}

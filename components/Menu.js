@@ -7,14 +7,16 @@ const Menu = () => {
 
   return (
     <>
-      <Image
-        src="/img/logo-coffee.png"
-        height={100}
-        width={150}
-        className="mx-auto"
-        alt="Logo Coffee Shop"
-        priority
-      />
+      <div className="mx-auto">
+        <Image
+          src="/img/logo-coffee.png"
+          className="mx-auto h-auto object-contain"
+          alt="Logo Coffee Shop"
+          priority
+          width={180}
+          height={100}
+        />
+      </div>
       <nav className="mt-6">
         {categoriasList.map((cat) => (
           <CategoriaItem key={cat.id} cat={cat} />

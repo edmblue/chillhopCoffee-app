@@ -8,7 +8,7 @@ const CategoriaCard = ({ producto }) => {
   const { nombre, imagen, precio } = producto;
 
   return (
-    <div className="bg-white p-3 rounded-md shadow-md grid lg:grid-cols-2 gap-3">
+    <div className="bg-white p-3 rounded-md shadow-md grid lg:grid-cols-2 gap-3 items-center">
       <Image
         width={200}
         height={100}

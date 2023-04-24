@@ -1,13 +1,15 @@
 import Head from 'next/head';
 import Menu from '@/components/Menu';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import useCategorias from '@/hooks/useCategorias';
 import ModalContent from '@/components/ModalContent';
 import Steps from '@/components/Steps';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
+import Spinner from '@/components/Spinner';
 
 const customStyles = {
   content: {
@@ -23,9 +25,21 @@ const customStyles = {
 Modal.setAppElement('#__next');
 
 const Layout = ({ children, title = '', description = '' }) => {
-  const [isActive, setIsActive] = useState(false);
+  const { modal, isActive, setIsActive } = useCategorias();
 
-  const { modal } = useCategorias();
+  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 3000);
+  }, []);
+
+  router?.events?.on('routeChangeStart', (url) => {
+    setIsLoading(true);
+  });
+  router?.events?.on('routeChangeComplete', (url) => {
+    setIsLoading(false);
+  });
 
   const handleMenu = () => {
     setIsActive(!isActive);
@@ -34,7 +48,7 @@ const Layout = ({ children, title = '', description = '' }) => {
   return (
     <>
       <Head>
-        <title>Chillhop Coffee | {title} </title>
+        <title>{`Chillhop Coffee | ${title}`}</title>
         <meta name="description" content={description} />
       </Head>
       <div className="md:flex">
@@ -71,7 +85,7 @@ const Layout = ({ children, title = '', description = '' }) => {
             theme="light"
           />
           <Steps />
-          {children}
+          {isLoading ? <Spinner /> : children}
         </main>
         <Modal isOpen={modal} style={customStyles}>
           <ModalContent />
