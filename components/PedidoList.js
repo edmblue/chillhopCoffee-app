@@ -97,7 +97,9 @@ const PedidoList = ({ ordenes }) => {
                 </span>
               </p>
               <button
-                className="bg-green-400 text-red-950 font-bold px-3 py-2 hover:bg-green-700 hover:text-white rounded"
+                className={`bg-green-400 text-red-950 font-bold px-3 py-2 hover:bg-green-700 hover:text-white rounded ${
+                  orden.estado ? 'hidden' : 'block'
+                }`}
                 type="button"
                 onClick={() => completeOrden(orden.id)}
               >
