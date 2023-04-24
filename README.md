@@ -62,6 +62,6 @@
 
 You can enter the admin section by just adding **/admin** to the link
 
-This is my first "Fullstack" Web Application that I make fully on my own and I.COULDN'T.BE.HA.PPI.ER for real, is not the best I know the UI can be improved but I did try to make the UX the best as possible, it was so exciting to be able to use my application in web, mobile, see the backend working and being able to rebiew the orders in the admin panel
+This is my first "Fullstack" Web Application that I make fully on my own and I.COULDN'T.BE.HA.PPI.ER for real, is not the best I know the UI can be improved but I did try to make the UX the best as possible, it was so exciting to be able to use my application in web, mobile, see the backend working and being able to review the orders in the admin panel
 
 <sub>**Additional**: no additional notes </sub>
